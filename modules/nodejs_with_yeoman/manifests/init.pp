@@ -20,7 +20,7 @@ class nodejs_with_yeoman {
   }
 
   exec { "install-yo-grunt-cli-bower":
-    command => "npm install -g yo grunt-cli bower",
+    command => "npm install -g yo grunt-cli bower coffee-script mocha",
     require => Package["nodejs"],
   }
 
