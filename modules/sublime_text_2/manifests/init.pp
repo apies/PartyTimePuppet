@@ -1,6 +1,8 @@
 class sublime_text_2 {
 	 exec { "download-and-extract-sublimetext2-tar":
-	 	command => 'wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20x64.tar.bz2; tar xf Sublime\ Text\ 2.0.1\ x64.tar.bz2',
+	 	$current_version_dl = "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2"
+	 	$current_version = "2.0.2"
+	 	command => "wget {$current_version_dl}; tar xf Sublime\ Text\ {$current_version}\ x64.tar.bz2'"
 
 	 }
 
@@ -9,10 +11,10 @@ class sublime_text_2 {
 	 	require => Exec["download-and-extract-sublimetext2-tar"],
 	 }
 
-	 file { "/usr/share/applications/sublime.desktop":
-	 	source => "puppet:///modules/sublime_text_2/sublime.desktop",
-	 	require => Exec["move-sublime-executable-to-path"],
-	 }
+	 #file { "/usr/share/applications/sublime.desktop":
+	 #	source => "puppet:///modules/sublime_text_2/sublime.desktop",
+	 #	require => Exec["move-sublime-executable-to-path"],
+	 #}
 
 
 
