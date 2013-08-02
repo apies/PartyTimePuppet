@@ -4,5 +4,5 @@ Exec {
 
 include nodejs_with_yeoman
 include sublime_text_2
-
+include mongodb
 
